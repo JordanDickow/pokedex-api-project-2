@@ -1,4 +1,4 @@
-class PokemonsController < ApplicationController
+class PokemonsController < OpenReadController
   before_action :set_pokemon, only: [:show, :update, :destroy]
 
   # GET /pokemons
@@ -15,10 +15,10 @@ class PokemonsController < ApplicationController
 
   # POST /pokemons
   def create
-    @pokemon = current_user.Pokemon.new(pokemon_params)
+    @pokemon = current_user.pokemons.build(pokemon_params)
 
     if @pokemon.save
-      render json: @pokemon, status: :created, location: @pokemon
+      render json: @pokemon, status: :created
     else
       render json: @pokemon.errors, status: :unprocessable_entity
     end
@@ -41,7 +41,7 @@ class PokemonsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokemon
-      @pokemon = Pokemon.find(params[:id])
+      @pokemon = current_user.pokemons.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
