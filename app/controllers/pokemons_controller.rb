@@ -16,7 +16,7 @@ class PokemonsController < ProtectedController
 
   # POST /pokemons
   def create
-    @pokemon = current_user.pokemons.build(pokemon_params)
+    @pokemons = current_user.pokemons.build(pokemon_params)
 
     if @pokemon.save
       render json: @pokemon, status: :created
