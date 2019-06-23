@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/pokemons/${ID}" \
+curl "'http://localhost:4741/pokemons/${ID}" \
   --include \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \
@@ -8,6 +8,7 @@ curl "http://localhost:4741/pokemons/${ID}" \
   --data '{
     "pokemon": {
       "name": "'"${NAME}"'"
+
     }
   }'
 

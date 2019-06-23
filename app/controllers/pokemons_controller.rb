@@ -1,9 +1,9 @@
-class PokemonsController < OpenReadController
-  before_action :set_pokemon, only: [:show, :update, :destroy]
+class PokemonsController < ProtectedController
+  before_action :set_pokemon, only: %i[show update destroy]
 
   # GET /pokemons
   def index
-    @pokemons = Pokemon.all
+    @pokemon = current_user.pokemons.all
 
     render json: @pokemons
   end
@@ -39,13 +39,13 @@ class PokemonsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pokemon
-      @pokemon = current_user.pokemons.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pokemon
+    @pokemon = current_user.pokemons.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def pokemon_params
-      params.require(:pokemon).permit(:name)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def pokemon_params
+    params.require(:pokemon).permit(:name)
+  end
 end
