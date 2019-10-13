@@ -10,13 +10,13 @@ class PokemonsController < ProtectedController
 
   # GET /pokemons/1
   def show
-  @pokemons = current_user.pokemons.all
+  @pokemon = current_user.pokemons.all
     render json: @pokemon
   end
 
   # POST /pokemons
   def create
-    @pokemons = current_user.pokemons.build(pokemon_params)
+    @pokemon = current_user.pokemons.build(pokemon_params)
 
     if @pokemon.save
       render json: @pokemon, status: :created
