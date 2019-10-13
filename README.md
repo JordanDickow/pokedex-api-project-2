@@ -1,6 +1,6 @@
 <h1>Pokedex API</h1>
 
-<p>This is the API for my Pokedex full stack Pokedex application. This C.R.U.D. application is a library of pokemon. Users (trainers) can  create new pokemon, see pokemon,  update their names, or release them into the wild (delete them).</p>
+<p>This is the API for my  full stack Pokedex application. This C.R.U.D. application is a library of pokemon. Users (trainers) can  create new pokemon, see pokemon,  update their names, or release them into the wild (delete them).</p>
 
 <h1>Set Up</h1>
 <p>Clone this repository</p>
