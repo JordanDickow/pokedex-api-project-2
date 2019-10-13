@@ -4,8 +4,8 @@
 
 <h1>Set Up</h1>
 <p>Clone this repository</p>
-<p> run bundle install to install all Ruby dependencies</p>
-<p>Run bin/rails server to run server</p>
+<p> Run bundle install to install all Ruby dependencies</p>
+<p>Run bin/ run rails server to start server</p>
 <p>Enjoy!</p>
 
 
